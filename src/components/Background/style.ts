@@ -13,12 +13,10 @@ export const SvgBackground = styled.ImageBackground`
 export const Logo = styled.View`
     margin-left: auto;
     padding-top: 25px;
-    padding-right: 50px;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 200px;
-    justify-content: center;
-    align-items: center;
+    width: 50%;
+    justify-content: flex-start;
 `;
 
 export const Text = styled.Text`

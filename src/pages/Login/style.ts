@@ -1,44 +1,53 @@
 import styled from 'styled-components/native';
 import LinearGradient from 'react-native-linear-gradient';
+import {KeyboardAvoidingView} from 'react-native';
 
-export const StyledView = styled.View`
-    width: 88%;
-    height: 500px;
-    margin-top: 172px;
-    margin-left: auto;
-    margin-right: auto;
+export const Container = styled(KeyboardAvoidingView)`
+    flex: 1;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+`;
+
+export const InputView = styled.View`
+    width: 80%;
+    gap: 5px;
 `;
 
 export const StyledText = styled.Text`
-    color: #878787;
+    color: ${(props: {theme: {BLACK_500: string}}) => props.theme.BLACK_500};
+    font-size: 20px;
+    align-self: flex-start;
 `;
 
 export const StyledInput = styled.TextInput`
-    background-color: white;
+    background-color: ${(props: {theme: {GRAY_100: string}}) =>
+        props.theme.GRAY_100};
     color: #000;
     width: 100%;
     border: 1px solid #ddd;
-    height: 36px;
+    height: 40px;
+    padding: 10px;
 `;
 
 export const StyledButton = styled.TouchableOpacity`
     padding: 16px;
     border-radius: 8px;
     width: 30%;
-    margin: 0 auto;
+    margin: 20px auto;
     align-items: center;
     justify-content: center;
 `;
 
 export const TextButton = styled.Text`
     font-weight: bold;
-    color: #fff;
+    color: ${(props: {theme: {WHITE: string}}) => props.theme.WHITE};
 `;
 
 export const GradientBackground = styled(LinearGradient).attrs({
-    colors: ['#00FFC2', '#0088FF'],
-    start: {x: 0, y: 0},
-    end: {x: 1, y: 0},
+    colors: ['#92FE9D', '#00C9FF'],
+    start: {x: 1, y: 0},
+    end: {x: 0, y: 0},
 })`
     position: absolute;
     left: 0;
@@ -46,8 +55,4 @@ export const GradientBackground = styled(LinearGradient).attrs({
     top: 0;
     bottom: 0;
     border-radius: 8px;
-`;
-
-export const InputFied = styled.TextInput`
-    height: 20px;
 `;

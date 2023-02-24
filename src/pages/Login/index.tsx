@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-    StyledView,
+    Container,
+    InputView,
     StyledText,
     StyledInput,
     StyledButton,
     GradientBackground,
     TextButton,
-    InputFied,
 } from './style';
 import {useNavigation} from '@react-navigation/native';
 import {propsStack} from '../../routes/Stack/Models';
@@ -17,19 +17,20 @@ export default function Login() {
 
     return (
         <Background>
-            <StyledView>
-                <StyledText>Usuário</StyledText>
-                <StyledInput />
-                <StyledText>Senha</StyledText>
-                <StyledInput secureTextEntry={true} />
-                <InputFied />
-                <StyledButton
-                    color="#00C9FF"
-                    onPress={() => navigation.navigate('Home')}>
+            <Container behavior="padding">
+                <InputView>
+                    <StyledText>Usuário</StyledText>
+                    <StyledInput />
+                </InputView>
+                <InputView>
+                    <StyledText>Senha</StyledText>
+                    <StyledInput secureTextEntry={true} />
+                </InputView>
+                <StyledButton onPress={() => navigation.navigate('Home')}>
                     <GradientBackground />
                     <TextButton>Login</TextButton>
                 </StyledButton>
-            </StyledView>
+            </Container>
         </Background>
     );
 }
